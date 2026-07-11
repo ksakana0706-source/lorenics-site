@@ -44,7 +44,8 @@
   .fx-gear { transform-box: fill-box; transform-origin: center; }
   .fv-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 24px; max-width: 590px; }
   .fv-result-flow { display: grid; grid-template-columns: 1fr 78px 1fr; align-items: center; gap: 10px; margin: 0 0 12px auto; max-width: 560px; }
-  @media (prefers-reduced-motion: reduce) { .fx-gear, [style*="fx-"], [style*="fv-"] { animation: none !important; } }
+  /* Keep the factory demo running on phones; reduced-motion still applies on larger screens. */
+  @media (prefers-reduced-motion: reduce) and (min-width: 681px) { .fx-gear, [style*="fx-"], [style*="fv-"] { animation: none !important; } }
   @media (max-width: 680px) {
     .hdr-email { display: none !important; }
     .hdr-daihyo { display: none !important; }
